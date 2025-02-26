@@ -1,0 +1,25 @@
+{
+    "name": "coll0261/phpweb",
+    "description": "nothing",
+    "type": "projet",
+    "require-dev": {
+    },
+    "license": "CopyLeft",
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Benoit  Collot",
+            "email": "benoit.collot@etudiant.univ-reims.fr"
+        }
+    ],
+
+    "config": {
+        "allow-plugins": {
+            "phpro/grumphp": true
+        }
+    }
+}
