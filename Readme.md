@@ -24,7 +24,7 @@ On préférera utiliser les commandes faites avec composer pour gagner du temps 
 ```composer "fix:cs"``` pour fixer les problèmes  
 
 L'utilisation de Grumphp pour sniffer vos commits vous évitera les erreurs bêtes cependant si vous souhaitez changer de 
-poste utiliser l'option `-n` au moment de git commits dans le terminal  
+poste utiliser l'option `-n` au moment de git commits dans le terminal pour ne pas forcément passer les tests,
 
 ## Tests
 
@@ -46,8 +46,7 @@ Cela mettre également à jour l'auto chargement sinon utilisé ```composer dump
 Et ne pas oublier de mettre dans ___Settings\Php\Quality_Tools de mettre php-cs-fixer dans External formatter___.
 
 ### Installation composer -> linux
-[https://getcomposer.org/download/](ici), pour le guide taper la commande composer
-
+[Ici](https://getcomposer.org/download/), pour installer composer sous linux
 ### Installation composer -> Window
 Le fichier de setup est dans bin
 
