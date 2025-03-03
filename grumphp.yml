@@ -1,0 +1,15 @@
+grumphp:
+    fixer:
+        enabled: false
+        fix_by_default: false
+    tasks:
+        composer: null
+        phpcsfixer2:
+            config: '.php-cs-fixer.php'
+        phpmd:
+            whitelist_patterns: [ ]
+            exclude: [ ]
+            report_format: text
+            ruleset: [ 'codesize', 'controversial', 'design', 'naming', 'unusedcode' ]
+            triggered_by: [ 'php' ]
+        phpunit: null
