@@ -17,4 +17,14 @@
 
 ###> phpunit/phpunit ###
 .phpunit.result.cache
+.phpunit.cache
 ###< phpunit/phpunit ###
+
+###> Bd Sqlite Pour Test ###
+/tests/*.sqlite
+/tests/*.sqlite_snapshot
+###< Bd Sqlite Pour Test ###
+
+###> mypdo ###
+.mypdo.ini
+###< mypdo ###

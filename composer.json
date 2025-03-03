@@ -3,8 +3,15 @@
     "description": "nothing",
     "type": "projet",
     "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.64",
+        "phpunit/phpunit": "^9",
+        "phpro/grumphp": "^2.10"
     },
-    "license": "CopyLeft",
+    "require": {
+        "ext-pdo": "*",
+        "ext-intl": "*"
+    },
+    "license": "open license",
     "autoload": {
         "psr-4": {
             "": "src/"
@@ -12,11 +19,57 @@
     },
     "authors": [
         {
-            "name": "Benoit  Collot",
-            "email": "benoit.collot@etudiant.univ-reims.fr"
+            "name": "Benoit Collot",
+            "email": "benoit.collot05@gmail.com"
         }
     ],
+	"scripts": {
+        "fix:cs": [
+            "php vendor/bin/php-cs-fixer fix"
+        ],
+        "fix": [
+            "@fix:cs"
+        ],
+        "test:cs": [
+            "php vendor/bin/php-cs-fixer fix --dry-run"
+        ],
+		"start:linux": [
+            "bin/run-server.sh",
+            "Composer\\Config::disableProcessTimeout"
+        ],
+        "start:windows": [
+            "Composer\\Config::disableProcessTimeout",
+            "bin/run-server.sh"
+        ],
+		"start" : [
+            "@start:linux"
+        ],
+        "test:phpunit": [
+            "vendor/bin/phpunit"
+        ],
+        "test": [
+            "@test:cs",
+            "@test:phpunit"
+        ],
+        "grumphp:precommit": [
+            "vendor/bin/grumphp git:pre-commit --no-interaction"
+        ],
+        "grumphp:run": [
+            "vendor/bin/grumphp run"
+        ]
 
+    },
+    "scripts-descriptions": {
+        "start" : "Run Web server on Linux",
+        "start:linux" : "Run Web server on Linux",
+        "start:windows" : "Run Web server on Windows",
+        "fix:cs": "Fix PHP code with PHP CS Fixer",
+        "test:cs" : "Test PHP code with PHP CS Fixer",
+        "test:phpunit": "Run PHPUnit tests",
+        "test": "Run all tests",
+        "grumphp:precommit": "Run GrumPHP on staged files",
+        "grumphp:run": "Run GrumPHP on all files"
+    },
     "config": {
         "allow-plugins": {
             "phpro/grumphp": true
